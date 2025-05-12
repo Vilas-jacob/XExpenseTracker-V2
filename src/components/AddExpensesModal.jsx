@@ -50,12 +50,12 @@ function AddExpensesModal({cancelAddExpensesModal, addExpense, editingExpense, s
             <div className='addExpensesForm '>
                 <form onSubmit={handleAddExpense} >
                     <div className='grid grid-cols-2 gap-5 px-5 mb-5 text-md font-semibold md:text-lg md:font-bold'>
-                        <input className='rounded-lg bg-white px-5 shadow-md' type='text' placeholder='Title' value={title} onChange={(e)=>setTitle(e.target.value)} required ></input>
-                        <input className='rounded-lg bg-white px-5 shadow-md' type='number' placeholder='Price' value={price} onChange={(e)=>setPrice(e.target.value)} required ></input>
+                        <input className='rounded-lg bg-white px-5 shadow-md' type='text' placeholder='Title' name='title' value={title} onChange={(e)=>setTitle(e.target.value)} required ></input>
+                        <input className='rounded-lg bg-white px-5 shadow-md' type='number' placeholder='Price' name='price' value={price} onChange={(e)=>setPrice(e.target.value)} required ></input>
                     </div>
                     <div className='grid grid-cols-2 gap-5 px-5 mb-5 text-md font-semibold md:text-lg md:font-bold'>
                       
-                        <select className='rounded-lg bg-white px-5 shadow-md' value={category} onChange={(e)=>setCategory(e.target.value)} required>  
+                        <select className='rounded-lg bg-white px-5 shadow-md' name='category' value={category} onChange={(e)=>setCategory(e.target.value)} required>  
                             <option value="">Select Category</option>
                             <option value="Food">Food</option>
                             <option value="Entertainment">Entertainment</option>
@@ -63,7 +63,7 @@ function AddExpensesModal({cancelAddExpensesModal, addExpense, editingExpense, s
                             <option value="Utilities">Utilities</option>
                             <option value="Others">Others</option>
                         </select>
-                        <input className='rounded-lg bg-white px-5 shadow-md' type='date' value={date} onChange={(e)=>setDate(e.target.value)} required></input>
+                        <input className='rounded-lg bg-white px-5 shadow-md' type='date' name='date' value={date} onChange={(e)=>setDate(e.target.value)} required></input>
                     </div>
                     <div className='grid grid-flow-col px-5 mb-5 gap-5 text-md font-semibold md:text-lg md:font-bold'>
                     <button type="submit" className='addExpenseButton rounded-lg bg-orange-300 text-white px-3 py-2 shadow-md'>{editingExpense ? 'Edit Expense' : 'Add Expense'}</button>
